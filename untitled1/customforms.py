@@ -1,13 +1,20 @@
 from allauth.account.forms import SignupForm
 from django import forms
+
 class MyCustomSignupForm(SignupForm):
     def __init__(self, *args, **kwargs):
         super(MyCustomSignupForm, self).__init__(*args, **kwargs)
-        organization = forms.CharField(max_length=12, label='Phone')
-        self.fields['organization'] = forms.CharField(required=True)
+        #name
+        first_name = forms.CharField(max_length=12, label='first_name')
+        self.fields['first_name'] = forms.CharField(required=True)
+
+        #surname
+        last_name = forms.CharField(max_length=12, label='last_name')
+        self.fields['last_name'] = forms.CharField(required=True)
+
     def save(self, request):
         user = super(MyCustomSignupForm, self).save(request)
-        user.organization = self.cleaned_data['organization']
-        print(user.organization)
+        user.first_name = self.cleaned_data['first_name']
+        user.last_name = self.cleaned_data['last_name']
         user.save()
         return user

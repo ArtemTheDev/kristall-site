@@ -6,13 +6,14 @@ from django.contrib.auth.models import User
 from .models import Task
 from .models import Customs
 
-class Customs(admin.StackedInline):
+
+class Custom(admin.StackedInline):
     model = Customs
-    can_delete = False
-    verbose_name_plural = 'Customs'
+
 
 class UserAdmin(BaseUserAdmin):
-    inlines = (Customs,)
+    inlines = (Custom, )
+
 
 @admin.register(Task)
 class TaskAdmin(admin.ModelAdmin):
@@ -23,6 +24,7 @@ class TaskAdmin(admin.ModelAdmin):
     raw_id_fields = ('author',)
     date_hierarchy = 'publish'
     ordering = ('status', 'publish')
+
 
 admin.site.unregister(User)
 admin.site.register(User, UserAdmin)

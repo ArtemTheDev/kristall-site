@@ -109,6 +109,11 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
+ACCOUNT_FORMS = {
+    'signup': 'untitled1.customforms.MyCustomSignupForm',
+}
+
+
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),

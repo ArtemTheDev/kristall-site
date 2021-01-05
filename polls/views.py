@@ -27,6 +27,7 @@ def russlug(slug):
     return slug
 
 
+
 def home_page(request):
     return render(request, 'polls/home_page.html')
 
@@ -37,7 +38,8 @@ def news(request):
 
 
 def NewsPostDetail(request, post, id):
-    post = get_object_or_404(Task, slug=post, status='published', id=request.user.id)
+    print(post)
+    post = get_object_or_404(Task, slug=post, status='published')
     return render(request, 'newsPostDetail.html', {'post': post})
 
 

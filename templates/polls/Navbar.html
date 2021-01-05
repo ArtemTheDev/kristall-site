@@ -13,7 +13,6 @@
     <div class = 'navbar'>
     	<ul class = 'nav'>
 
-
     		<li class = 'navITEM'>
     			<a href="{% url 'tasks:news' %}">Новости</a>
     		</li>
@@ -34,7 +33,7 @@
 
                     <div class = 'profMenu'>
                         <div class = 'Name_avatar'>
-                            <img src = "{% static 'img/test.jpeg' %}">
+                            <img src = "{{ user.customs.avatar.url }}">
                             <div class = 'first_last_names'>
                                 <div class = 'first_name'>{{ user.first_name }}</div>
                                 <div class = 'last_name'>{{ user.last_name }}</div>

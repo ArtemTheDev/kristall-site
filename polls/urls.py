@@ -9,6 +9,6 @@ urlpatterns = [
     path('about',views.about, name='about'),
     path('create_news', CreatePostView.as_view(), name='create_news'),
     path('profile', views.profile, name='account_profile'),
-    path('<slug:post><str:id>/',
+    path('news/<slug:post>/<str:id>/',
          views.NewsPostDetail, name='post_detail'),
 ]

@@ -1,12 +1,14 @@
+
+
 /** DEFAULT BG COLOR **/
-body { background-color:#4d9bf9 }
+body { background-color: var(--bg_default) }
 
 /** SMOOTH BG **/
 .bg {
 	position:fixed;
 	width:100%;
 	height:100%;
-	background: linear-gradient(#1577ec, #a5cdff) fixed no-repeat;
+	background: linear-gradient( var(--bg_darker),var(--bg_lighter) ) fixed no-repeat;
 	top:0;
 	left:0;
 	z-index:-100;
@@ -31,7 +33,7 @@ body { background-color:#4d9bf9 }
 
 .newsPage-View input {
 	width:75%;
-	border-color: #4284D3;
+	border-color: var(--input_border_color);
 	border-radius: 10px;
 	background-color:white;
 	font-size: 20px;
@@ -50,7 +52,9 @@ body { background-color:#4d9bf9 }
 	outline:none;
 }
 
-.searchNewsBlock { text-align: -webkit-center; }
+.searchNewsBlock {
+	text-align: -webkit-center;
+}
 
 .NoNews {
 	font-size:30px;
@@ -70,16 +74,58 @@ body { background-color:#4d9bf9 }
 
 .mainNewsBlock h3 {
 	font-weight: 600;
-    font-size: 40px;
+    font-size: 25px;
 	margin: 10px 0px 0px 0px;
+	color:black;
 }
 
 .mainNewsBlock p {
 	margin-top: 5px;
-	font-size: 25px;
+	font-size: 15px;
 	margin-bottom: 5px;
 	text-align: justify;
 	max-height: 80%;
+	color:black;
+}
+
+.mainNewsBlock h6 {
+    font-size: 15px;
+	font-weight:100;
+	margin: 10px 0px;
+	color:black;
+}
+
+/* AUTHOR DATA */
+
+.author_data {
+	margin-top: 20px;
+	display: -webkit-box;
+}
+
+.author_data .first_last_names {
+	margin-top: auto;
+    margin-bottom: auto;
+	margin-left: 20px;
+}
+
+.author_data .avatar {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+}
+
+.author_data .author {
+	font-size: 30px;
+    font-weight: 600;
+}
+
+.author_data .first_name, .author_data .last_name {
+	font-size: 15px;
+}
+
+
+a {
+	text-decoration: none;
 }
 
 .newsIMG {
@@ -87,14 +133,14 @@ body { background-color:#4d9bf9 }
 	min-height:200px;
 
 	max-width:100%;
-	max-height:500px;
+	max-height:250px;
 
 	margin: 20px 0px;
 }
 
 /** USers Activity **/
 .userActivity_buttons {
-	font-size:35px;
+	font-size:20px;
 	color:grey;
 	background-color: transparent;
 	border:none;
@@ -103,15 +149,15 @@ body { background-color:#4d9bf9 }
 }
 
 .userActivity span {
-	display: inline-block;
-	margin-block-start: 20px;
-	margin-block-end: 20px;
+	margin-bottom: 20px;
 	color: GREY;
-	font-size: 25px;
+	font-size: 20px;
 	font-weight: 600;
 }
 
-.userActivity{margin-right: 10px;}
+.userActivity{
+	margin-right: 10px;
+}
 
 @media (max-width:389px) {
 	.userActivity span {display: none;}
@@ -142,4 +188,5 @@ body { background-color:#4d9bf9 }
 
 
 #transition_disabled {
-  transition: none !important; }
+  transition: none !important;
+}

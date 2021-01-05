@@ -1,0 +1,16 @@
+{% load static %}
+{% if user.is_authenticated %}
+        {% if user.customs.colors == "1" %}
+            <!-- BLUE -->
+            <link type='text/css' href={% static 'polls/css/colors/blue.css'%} rel='stylesheet'>
+        {% elif user.customs.colors == "2" %}
+            <!-- GREEN -->
+            <link type='text/css' href={% static 'polls/css/colors/green.css'%} rel='stylesheet'>
+        {% else %}
+            <!-- BLUE -->
+            <link type='text/css' href={% static 'polls/css/colors/blue.css'%} rel='stylesheet'>
+        {% endif %}
+    {% else %}
+        <!-- BLUE -->
+        <link type='text/css' href={% static 'polls/css/colors/blue.css'%} rel='stylesheet'>
+{% endif %}

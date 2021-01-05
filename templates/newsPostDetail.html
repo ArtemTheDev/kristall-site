@@ -1,5 +1,46 @@
-{% block content %}
-    <h1>{{ post.title }}</h1>
-    <p class="date"> Published {{ post.publish }} by {{ post.author }}</p>
-    {{ post.body|linebreaks }}
+{% extends 'polls/Navbar.html' %}
+
+{% block title %} Новости {% endblock %}
+
+{% block head %}
+    {% load static %}
+    <link href="{% static 'polls/css/newsPageView.css' %}" rel="stylesheet" type="text/css">
+
+    {% include "colors_select.html" %}
+
+    <script type="text/javascript" src="{% static 'polls/js/jquery-1.12.3.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'polls/js/fa.js' %}"></script>
+
+
+{% endblock %}
+
+{% block body %}
+    <body id="transition_disabled">
+        <div class = 'bg'></div>
+        <div class = 'mainNewsBlock'>
+                    <div class="author_data">
+                        <img class="avatar" src="{{ post.author.customs.avatar.url }}">
+                        <div class="first_last_names">
+                            <div class="author">@{{ post.author }}</div>
+                            <span class="first_name">{{ post.author.first_name }}</span>
+                            <span class="last_name">{{ post.author.last_name }}</span>
+                        </div>
+                    </div>
+                        {% if post.img %}
+                            <img class = 'newsIMG' src="{{ post.img.url }}" alt="{{ post.title }}">
+                        {% endif %}
+                        <h3>{{ post.title }}</h3>
+                        <p>{{ post.task }}</p>
+                    <h6>Опубликованно {{ post.publish }}</h6>
+                        <div class = 'userActivity'>
+                            <button class = 'userActivity_buttons fa fa-heart-o LikeBtn'></button>
+                            <span>лаеккккк</span>
+                        </div>
+                        <div class = 'userActivity'>
+                            <button class = 'userActivity_buttons fa fa-comment-o'></button>
+                            <span>каменты ыы</span>
+                        </div>
+        </div>
+
+    </body>
 {% endblock %}

@@ -17,5 +17,4 @@ class TaskForm(ModelForm):
                 'placeholder': 'Введите текст новости',
                 'name': 'newsContent',
             }),
-
         }

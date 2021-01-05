@@ -5,17 +5,61 @@
 {% block head_title %}{% trans "Signup" %}{% endblock %}
 
 {% block content %}
-<h1>{% trans "Sign Up" %}</h1>
-
-<p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
 
 <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
-  {% csrf_token %}
-  {{ form.as_p }}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-  {% endif %}
-  <button type="submit">{% trans "Sign Up" %} &raquo;</button>
+    {% csrf_token %}
+
+    <div class = 'bg'></div>
+		<div class = 'reg'>
+			<div class = 'reg_white'>
+				<div class = 'rg'>
+					<h4 class = 'Enter'>Регистрация</h4>
+
+                {{ form.as_p }}
+                <!--
+					<div class = 'inputDATA'>
+						<input type="text" placeholder="Введите имя" name="first_name" minlength="4" maxlength="150" required="" id="id_first_name">
+					</div>
+
+					<div class = 'inputDATA'>
+						<input type="text" placeholder="Введите Фамилию" name="last_name" minlength="4" maxlength="150" required="" id="id_last_name">
+					</div>
+
+					<div class = 'inputDATA'>
+						<input type="text" placeholder="Введите ник" minlength="4" maxlength="150" required="" id="id_username" name="name">
+					</div>
+
+					<div class = 'inputDATA'>
+						<input type="text" placeholder="Введите свою эл. почту (Необязательно)" name = 'email' id="id_email">
+					</div>
+
+					<div class = 'inputDATA'>
+						<input type="password" placeholder="Введите пароль" name="password1" required="" id="id_password1">
+					</div>
+
+					<div class = 'inputDATA'>
+						<input type="password" placeholder="Введите пароль" name="password2" required="" id="id_password2">
+					</div>
+					-->
+
+                    {% if redirect_field_value %}
+                    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                    {% endif %}
+
+					<div class = 'input_btn'>
+                        <button type="submit">Зарегестрироваться</button>
+					</div>
+
+					<h5 class = 'nonREG'>Уже зарегистрированы?</h5>
+					<div class = 'input_btn'>
+                        <a href="{{ login_url }}">
+                            <input type="button" value='Войти'>
+                        </a>
+					</div>
+				</div>
+			</div>
+		</div>
+
 </form>
 
 {% endblock %}

@@ -1,4 +1,7 @@
 from django.db import models
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+from django.urls import reverse
 from django.utils import timezone
 from django.contrib.auth.models import User
 
@@ -10,7 +13,15 @@ class PublishedManager(models.Manager):
 
 class Customs(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    colors = models.CharField(max_length=100)
+    colors = models.CharField(max_length=1, default='0')
+    avatar = models.ImageField(upload_to='images/avatars/', default='images/avatars/default.png')
+
+
+@receiver(post_save, sender=User)
+def create_user_profile(sender, instance, created, **kwargs):
+    if created:
+        Customs.objects.create(user=instance)
+        Customs.colors = '0'
 
 
 class Task(models.Model):
@@ -33,6 +44,9 @@ class Task(models.Model):
 
     object = models.Manager()
     published = PublishedManager()
+
+    def get_absolute_url(self):
+        return reverse('tasks:post_detail', args=[self.slug, self.id])
 
     class Meta:
         verbose_name = 'Задача'

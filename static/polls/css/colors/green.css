@@ -1,0 +1,9 @@
+:root {
+    --bg_darker: #106900;
+    --bg_lighter: #0faf00;
+    --bg_default: #3a9e14;
+    --input_border_color: #1e9a15;
+
+    --navbar_color: #005f03;
+    --profile_text_color: #26821e;
+}
