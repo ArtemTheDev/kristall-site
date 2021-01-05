@@ -1,0 +1,55 @@
+{% extends 'polls/Navbar.html' %}
+
+{% block title %} Новости {% endblock %}
+
+{% block head %}
+    {% load static %}
+    <link href="{% static 'polls/css/newsPageView.css' %}" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" src="{% static 'polls/js/jquery-1.12.3.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'polls/js/fa.js' %}"></script>
+
+
+{% endblock %}
+
+{% block body %}
+    <body id="transition_disabled">
+    <div class = 'bg'></div>
+        <div class = 'newsPage-View'>
+			<span class = 'newsPageTitle'>Новости </span>
+
+            <div id = 'AllNews'>
+            {% if tasks  %}
+                {% for el in tasks %}
+                    <div class = 'mainNewsBlock'>
+                        <h2>{{ el.author }}</h2>
+                        <h6>Опубликованно {{ el.publish }}</h6>
+                        <h3>{{ el.title }}</h3>
+                        <p>{{ el.task }}</p>
+                        {% if el.img %}
+                            <img class = 'newsIMG' src="{{ el.img.url }}" alt="{{ el.title }}">
+                        {% endif %}
+                        <div class = 'userActivity'>
+                            <button class = 'userActivity_buttons fa fa-heart-o LikeBtn'></button>
+                            <span>лаеккккк</span>
+                        </div>
+                        <div class = 'userActivity'>
+                            <button class = 'userActivity_buttons fa fa-comment-o'></button>
+                            <span>каменты ыы</span>
+                        </div>
+
+                        <p>DEBUG</p>
+                        <p>slug: {{ el.slug }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+    {% else %}
+        <div class = 'mainNewsBlock'>
+            <h4 class = 'NoNews'>Пока никаких новостей нет. Приходите позже</h4>
+        </div>
+    {% endif %}
+        </div>
+    <script type="text/javascript" src="{% static 'polls/js/newsView.js' %}"></script>
+    <script type="text/javascript" src="{% static 'polls/js/main.js' %}"></script>
+    </body>
+{% endblock %}

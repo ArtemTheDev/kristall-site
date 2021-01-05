@@ -1,0 +1,100 @@
+body {
+	margin:0;
+}
+
+.navbar {
+	position: fixed;
+	top:0;
+    width: 100%;
+    height: 50px;
+    background:#38649c;
+    box-shadow: 0 7px 5px 0px rgba(0,0,0,0.5);
+    font-family: 'PT Sans', sans-serif;
+	z-index:100;
+}
+
+.nav {
+	padding-right:70px;
+	float: right!important;
+}
+
+.nav a {
+	color:white;
+	text-decoration: none;
+}
+
+.navITEM {
+	float: left;
+	list-style-type: none;
+	padding-right: 40px;
+	font-size: 20px;
+	font-weight:600;
+	color:white;
+}
+
+.navITEM:last-child {
+	padding-right:10px;
+}
+
+.username:hover {
+	cursor:pointer;
+}
+
+.Empty_Wrapper {
+	margin-bottom:100px;
+}
+
+.profMenu {
+	border-radius: 10px;
+    position: fixed;
+    top: 75px;
+    right: 20px;
+    display: none;
+    background-color: white;
+    padding: 10px 30px;
+    box-shadow: 0 5px 11px 0px rgba(0,0,0,0.5);
+}
+
+.profMenu::before{
+	content: '▲';
+    position: absolute;
+    right: 80px;
+    top: -18px;
+	text-shadow: 0px -5px 9px rgba(0,0,0,.5);
+}
+
+.profMenu.active {
+	display:block;
+}
+
+.profMenu a {
+	color:#1577ec;
+	font-weight:600;
+	line-height: 1.3;
+}
+
+.Name_avatar {
+	display:flex;
+	max-width:310px;
+}
+
+.Name_avatar img {
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	margin: 0px 10px 10px 0px;
+}
+
+.first_last_names {
+	text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.first_name, .last_name {
+	color: grey;
+    padding-right: 10px;
+    text-overflow: ellipsis;
+	white-space: nowrap;
+    overflow: hidden;
+}

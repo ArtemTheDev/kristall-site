@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link href="{% static 'polls/css/Navbar.css' %}" rel="stylesheet" type="text/css">
+
+    <title>{% block title %} {% endblock %}</title>
+    {% block head %} {% endblock %}
+</head>
+<body>
+    <!--    Navbar    -->
+    <div class = 'navbar'>
+    	<ul class = 'nav'>
+
+
+    		<li class = 'navITEM'>
+    			<a href="{% url 'tasks:news' %}">Новости</a>
+    		</li>
+
+            {% if user.is_authenticated %}
+            <li class = 'navITEM'>
+    			<a href="{% url 'tasks:create_news' %}">Добавить новость</a>
+    		</li>
+            {% endif %}
+
+    		<li class = 'navITEM'>
+    			<a href="{% url 'tasks:about' %}">О проекте</a>
+    		</li>
+
+            <li class = 'navITEM'>
+                {% if user.is_authenticated %}
+                    <span class="username">{{ user.username }}</span>
+
+                    <div class = 'profMenu'>
+                        <div class = 'Name_avatar'>
+                            <img src = "{% static 'img/test.jpeg' %}">
+                            <div class = 'first_last_names'>
+                                <div class = 'first_name'>{{ user.first_name }}</div>
+                                <div class = 'last_name'>{{ user.last_name }}</div>
+                            </div>
+                        </div>
+
+			            <a href="{% url 'tasks:account_profile' %}" >Профиль</a> <br>
+                        <a href="{% url 'account_logout' %}">Выйти</a>
+                    </div>
+    			    
+                {% else %}
+
+                <a href="{% url 'account_login' %}">Войти</a>
+                {% endif %}
+                    
+    		</li>
+    	</ul>
+    </div>
+
+    <div class='Empty_Wrapper'></div>
+
+    <!-- Future Packages
+        style = 'color: blue;'
+        <span class = 'line'></span>
+    -->
+
+    <script type="text/javascript" src= "{% static 'polls/js/mini-scripts/mini-profile.js' %}"></script>
+    <script type="text/javascript" src="{% static 'polls/js/jquery-1.12.3.min.js' %}"></script>
+
+    <!--    END Navbar    -->
+    {% block body %} {% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,145 @@
+/** DEFAULT BG COLOR **/
+body { background-color:#4d9bf9 }
+
+/** SMOOTH BG **/
+.bg {
+	position:fixed;
+	width:100%;
+	height:100%;
+	background: linear-gradient(#1577ec, #a5cdff) fixed no-repeat;
+	top:0;
+	left:0;
+	z-index:-100;
+}
+
+/** MAKING SMOOTH BG VISIBLE **/
+@media (max-width: 510px) { .bg { display:none; } }
+
+/** News Page **/
+.newsPage-View {
+	font-family: 'PT Sans', sans-serif;
+}
+
+.newsPageTitle {
+	font-weight:800;
+	font-size:45px;
+	color:white;
+	display: flex;
+	justify-content: center;
+	margin-bottom:10px;
+}
+
+.newsPage-View input {
+	width:75%;
+	border-color: #4284D3;
+	border-radius: 10px;
+	background-color:white;
+	font-size: 20px;
+	padding: 6px;
+	font-weight: bold;
+	outline: none;
+	margin-bottom: 20px;
+	word-break: break-word;
+}
+
+.searchbutton {
+	color:white;
+	font-size: 20px;
+	background-color: transparent;
+	border: none;
+	outline:none;
+}
+
+.searchNewsBlock { text-align: -webkit-center; }
+
+.NoNews {
+	font-size:30px;
+	text-align-last: center;
+}
+
+
+.mainNewsBlock {
+	width: 93%;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 6px 20px;
+    border-radius: 10px;
+	margin-bottom:35px;
+}
+
+.mainNewsBlock h3 {
+	font-weight: 600;
+    font-size: 40px;
+	margin: 10px 0px 0px 0px;
+}
+
+.mainNewsBlock p {
+	margin-top: 5px;
+	font-size: 25px;
+	margin-bottom: 5px;
+	text-align: justify;
+	max-height: 80%;
+}
+
+.newsIMG {
+	min-width:200px;
+	min-height:200px;
+
+	max-width:100%;
+	max-height:500px;
+
+	margin: 20px 0px;
+}
+
+/** USers Activity **/
+.userActivity_buttons {
+	font-size:35px;
+	color:grey;
+	background-color: transparent;
+	border:none;
+	outline:none;
+	transition: .3s;
+}
+
+.userActivity span {
+	display: inline-block;
+	margin-block-start: 20px;
+	margin-block-end: 20px;
+	color: GREY;
+	font-size: 25px;
+	font-weight: 600;
+}
+
+.userActivity{margin-right: 10px;}
+
+@media (max-width:389px) {
+	.userActivity span {display: none;}
+}
+
+@media (max-width:389px) {
+	.userActivity {
+		margin-right: 10px;
+		display: initial;
+	}
+}
+
+.fa-heart {color:red; transition: .3s;}
+
+
+/** Hover the user activity buttons **/
+.fa-heart-o:hover, .fa-heart:hover {
+	cursor: pointer;
+	color:red;
+	transition: .3s;
+}
+
+.fa-comment-o:hover, .fa-comment:hover {
+	cursor: pointer;
+	color:#2760a5;
+	transition: .3s;
+}
+
+
+#transition_disabled {
+  transition: none !important; }

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Регистрация</title>
+        {% load static %}
+		<link href={% static 'polls/css/general/login.css'%} rel = 'stylesheet'>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+		<link rel="apple-touch-icon" sizes="180x180" href={% static 'polls/img/Icon/apple-touch-icon.png' %}>
+		<link rel="icon" type="image/png" sizes="32x32" href={% static 'polls/img/Icon/favicon-32x32.png' %}>
+		<link rel="icon" type="image/png" sizes="16x16" href={% static 'polls/img/Icon/favicon-16x16.png' %}>
+		<link rel="manifest" href={% static 'polls/img/Icon/site.webmanifest' %}>
+		<link rel="mask-icon" href={% static 'polls/img/Icon/safari-pinned-tab.svg' %} color="#5bbad5">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="theme-color" content="#ffffff">
+
+	</head>
+
+	<body>
+		<div class = 'bg'></div>
+		<div class = 'reg'>
+			<div class = 'reg_white'>
+				<div class = 'rg'>
+					<h4 class = 'Enter'>Регистрация</h4>
+
+					<form method="post">
+
+					<div class = 'inputDATA'>
+						<input type="text" placeholder="Введите имя" name = 'name'>
+					</div>
+
+					<div class = 'inputDATA'>
+						<input type="text" placeholder="Введите Фамилию" name = 'surname'>
+					</div>
+
+					<div class = 'inputDATA'>
+						<input type="text" placeholder="Введите ник" name = 'nick'>
+					</div>
+
+					<div class = 'inputDATA'>
+						<input type="text" placeholder="Введите свою эл. почту" name = 'email'>
+					</div>
+
+					<div class = 'inputDATA'>
+						<input type="password" placeholder="Введите пароль" name = 'pass1'>
+					</div>
+
+					<div class = 'inputDATA'>
+						<input type="password" placeholder="Повторите пароль" name = 'pass2'>
+					</div>
+
+
+
+					<div class = 'input_btn'>
+						<input type="submit" value = 'Зарегестрироваться' name = 'done'>
+					</div>
+
+					<h5 class = 'nonREG'>Уже зарегистрированы?</h5>
+					<div class = 'input_btn'>
+						<input type="submit" value = 'Войти' name = 'enter'>
+					</div>
+
+				</form>
+
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1111</title>
+</head>
+<body>
+    <button id="rdm">Random color!</button>
+
+    <script>
+     function randomHSL(){
+     return "hsl(" + parseInt(256 * Math.random()) + "," +
+                    "70%,"+
+                    "85%,1)"
+     }
+
+    rdm.onclick = (function(){
+       document.body.style.backgroundColor = randomHSL()
+    })
+    rdm.click()
+     function repeat() {
+         document.body.style.backgroundColor = randomHSL();
+         setTimeout(repeat, 100);
+     }
+    setTimeout(repeat, 100);
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Авторизация</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        {% load static %}
+		<link href="{% static 'polls/css/login1.css' %}" rel="stylesheet" type="text/css">
+	</head>
+
+	<body>
+		<!--АВТОРИЗАЦИЯ-->
+
+		<div class = 'signblock'>
+			<div class = 'sign_white'>
+				<div class = 'sign'>
+					<form method = 'post'>
+
+						<h4 class = 'Enter'>Вход</h4>
+
+						<div class = 'inputDATA'>
+							<input type="text" placeholder="Введите логин" name="user">
+						</div>
+
+
+						<div class = 'inputDATA'>
+							<input type="password" placeholder="Введите пароль" name='pass'>
+						</div>
+
+						<div class = 'input_btn'>
+							<input type="submit" value = 'Войти' name='submit'>
+						</div>
+
+
+
+				<h5 class = 'nonREG'>Ещё не зарегистрированы?</h5>
+				<div class = 'input_btn'>
+                    <a href={% url 'registration' %}>Регистрация</a>
+				</form>
+				</div>
+			</div>
+		</div>
+
+    
+
+	</body>
+</html>
+
+
+
+
+
